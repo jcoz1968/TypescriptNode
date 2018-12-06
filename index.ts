@@ -1,13 +1,12 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import * as express from 'express';
+import * as mongoose from 'mongoose';
+import * as bodyParser from 'body-parser';
 import routes from './src/routes/crmRoutes';
 
 const app = express();
 const PORT = 3000;
 
 // mongoose connection
-mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://testdata12345:#Pentos321@ds137370.mlab.com:37370/linkedin_apis', {
     useMongoClient: true
 });
