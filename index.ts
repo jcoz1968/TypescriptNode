@@ -2,17 +2,21 @@ import * as express from 'express';
 import * as mongoose from 'mongoose';
 import * as bodyParser from 'body-parser';
 import routes from './src/routes/crmRoutes';
+import * as fs from 'fs';
 
 const app = express();
+const configPath = './config.json'
+const parsedConfig = JSON.parse(fs.readFileSync(configPath, 'UTF-8'));
 
-// number type
-const PORT: number = 3000;
+const PORT: number = 3000 || parsedConfig.development.port;
+
+const mlabUser: string = parsedConfig.development.mlabUserName;
+const mlabPass: string = parsedConfig.development.mlabPass;
+
+// console.log(mlabUser + '-' + mlabPass);
 
 // string
-const database: string = 'mongodb://testdata12345:#Pentos321@ds137370.mlab.com:37370/linkedin_apis';
-
-// array
-// let simpleArray: number[] = [1, 2, 3, 4];
+const database: string = `mongodb://${mlabUser}:${mlabPass}@ds137370.mlab.com:37370/linkedin_apis`;
 
 // mongoose connection
 mongoose.connect(database, {
