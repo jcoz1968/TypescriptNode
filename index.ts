@@ -4,10 +4,18 @@ import * as bodyParser from 'body-parser';
 import routes from './src/routes/crmRoutes';
 
 const app = express();
-const PORT = 3000;
+
+// number type
+const PORT: number = 3000;
+
+// string
+const database: string = 'mongodb://testdata12345:#Pentos321@ds137370.mlab.com:37370/linkedin_apis';
+
+// array
+// let simpleArray: number[] = [1, 2, 3, 4];
 
 // mongoose connection
-mongoose.connect('mongodb://testdata12345:#Pentos321@ds137370.mlab.com:37370/linkedin_apis', {
+mongoose.connect(database, {
     useMongoClient: true
 });
 
