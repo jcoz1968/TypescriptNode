@@ -21,6 +21,14 @@ export const getContacts = (req, res) => {
             res.send(err);
         }
         res.json(contact);
+        // actual data
+        for (let item of contact) {
+            console.log(item);
+        }
+        // position of data
+        for (let pos in contact) {
+            console.log(pos);
+        }
     });
 };
 
