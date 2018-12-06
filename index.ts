@@ -35,7 +35,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routes(app);
-clearScreenDown
+
+function nameCreator<T>(name: T): T {
+    return name;
+}
+
+let myName = nameCreator<string>('Coz, ');
+// let myName = nameCreator<number>(5);
+
+ // clearScreenDown
 // serving static files
 app.use(express.static('public'));
 
@@ -44,5 +52,5 @@ app.get('/', (req, res) =>
 );
 
 app.listen(PORT, () =>
-    console.log(`your server is running on port ${PORT}`)
+    console.log(nameCreator(myName), `your server is running on port ${PORT}`)
 );
