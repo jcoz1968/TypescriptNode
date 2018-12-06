@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 
-const Schema = Mongoose.Schema;
+const Schema = mongoose.Schema;
 
 export const ContactSchema = new Schema({
     firstName: {

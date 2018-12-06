@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "build": "tsc --w",
+    "start": "tsc && ts-node ./dist/index.js"
   },
   "author": "Emmanuel Henri",
   "license": "ISC",
