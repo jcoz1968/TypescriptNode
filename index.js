@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://linkedintest:testdata12345@ds151232.mlab.com:51232/linkedin_test', {
+mongoose.connect('<insert your own credentials>', {
     useMongoClient: true
 });
 
